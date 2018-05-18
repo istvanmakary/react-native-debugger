@@ -1,0 +1,38 @@
+{
+  "name": "react-native-debugger",
+  "version": "1.0.0",
+  "description": "Redux debugger for react & react-native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istvanmakary/react-debugger.git"
+  },
+  "keywords": [
+    "React Debugger",
+    "React Native Debugger",
+    "React",
+    "React Native",
+    "Redux"
+  ],
+  "author": "Istvan Makary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/istvanmakary/react-debugger/issues"
+  },
+  "homepage": "https://github.com/istvanmakary/react-debugger#readme",
+  "dependencies": {
+    "humps": "^2.0.1",
+    "lodash": "^4.17.5",
+    "react-native-device-info": "^0.10.2",
+    "redux-create-reducer": "^1.1.1",
+    "react-native-debugger": "git@github.com:istvanmakary/react-native-debugger.git"
+  },
+  "peerDepencies": {
+    "redux": "^3.6.0",
+    "react": "^15.3.2",
+    "react-native": "^0.35.0"
+  }
+}

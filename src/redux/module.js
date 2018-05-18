@@ -59,8 +59,8 @@ export const getDebugger = (state) => {
   return {
     ...state.debugger,
     events: state.debugger.events.filter((e) => (
-      matchLogLevel(state, e.logType) && state.debugger.debugTypes.includes(e.type)
-    )),
+      matchLogLevel(state, e.logType) && (state.debugger.debugTypes || []).includes(e.type)
+    )).sort((a,b) => b.date - a.date),
   };
 };
 

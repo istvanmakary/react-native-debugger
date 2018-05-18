@@ -30,12 +30,6 @@ const defaultConfig = {
   logLevel: 'ALL',
 };
 
-const cloneInstance = (base, instance, originalModule) => {
-  Object.setPrototypeOf(base, pick(Object.getPrototypeOf(instance), ['logAction']));
-  Object.assign(base, instance);
-  Object.assign(base, omit(originalModule, ['logOnServer']));
-};
-
 function DebuggerCreator (store, _config) {
   if (!store) {
     throw new Error('[react-debugger] store is not attached');
@@ -95,19 +89,18 @@ function DebuggerCreator (store, _config) {
         EVENT_NAMES: {},
       });
 
-      Debugger.ACTION_TYPES = EventConfig.ACTION_TYPES;
-      Debugger.CATEGORY_NAMES = EventConfig.CATEGORY_NAMES;
-      Debugger.EVENT_NAMES = EventConfig.EVENT_NAMES;
-      Debugger.actionTypeList = values(Debugger.ACTION_TYPES);
-      Debugger.eventTypeList = values(Debugger.EVENT_TYPES);
-      Debugger.getActionTypeName = (actionType) => EventConfig.CATEGORY_NAMES[actionType];
-      Debugger.getActionTypeShortName = (actionType) => EventConfig.EVENT_NAMES[actionType];
-
+      DebuggerCreator.ACTION_TYPES = EventConfig.ACTION_TYPES;
+      DebuggerCreator.CATEGORY_NAMES = EventConfig.CATEGORY_NAMES;
+      DebuggerCreator.EVENT_NAMES = EventConfig.EVENT_NAMES;
+      DebuggerCreator.actionTypeList = values(EventConfig.ACTION_TYPES);
+      DebuggerCreator.eventTypeList = values(EventConfig.EVENT_TYPES);
+      DebuggerCreator.getActionTypeName = (actionType) => EventConfig.CATEGORY_NAMES[actionType];
+      DebuggerCreator.getActionTypeShortName = (actionType) => EventConfig.EVENT_NAMES[actionType];
 
       store.dispatch(initialize({
         isVisible,
         logLevel,
-        debugTypes: Debugger.actionTypeList,
+        debugTypes: DebuggerCreator.actionTypeList,
       }));
     }
 
@@ -155,7 +148,8 @@ function DebuggerCreator (store, _config) {
     }
   }
 
-  cloneInstance(DebuggerCreator, new Debugger(), Debugger);
+  const _Debugger = new Debugger();
+  DebuggerCreator.logAction = _Debugger.logAction.bind(_Debugger);
 };
 
 export default DebuggerCreator;

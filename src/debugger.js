@@ -1,7 +1,6 @@
 import { values, pick, omit } from 'lodash';
 import { Platform } from 'react-native';
 import deviceInfo from 'react-native-device-info';
-import ErrorUtils from 'ErrorUtils';
 import { initialize, batchDebugEvents } from './redux/module';
 
 const device = {
@@ -111,19 +110,6 @@ function DebuggerCreator (store, _config) {
         debugTypes: Debugger.actionTypeList,
       }));
     }
-
-    // setUpGlobalErrorListener() {
-    //   const globalHAndler = ErrorUtils.getGlobalHandler();
-    //   ErrorUtils.setGlobalHandler((data) => {
-    //     this.log({
-    //       event: this.ACTION_TYPES.CRASH,
-    //       type: this.ACTION_TYPES.CRASH,
-    //       logType: Debugger.EVENT_TYPES.ERROR,
-    //       data,
-    //     });
-    //     globalHAndler(data);
-    //   });
-    // }
 
     static logOnServer = (events) => {
       fetch(config.serverUrl, {

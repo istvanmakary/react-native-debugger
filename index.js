@@ -1,5 +1,5 @@
 import createDebugger from './src/redux/enhancer';
-import debuggerReducer from './src/redux/module';
+import debuggerReducer, { hideDebugger, showDebugger } from './src/redux/module';
 import Debugger from './src/debugger';
 import DebuggerUI from './src/debuggerUIContainer';
 
@@ -8,4 +8,8 @@ export {
   debuggerReducer,
   Debugger,
   DebuggerUI,
+  actions: {
+    hideDebugger, 
+    showDebugger,
+  },
 };

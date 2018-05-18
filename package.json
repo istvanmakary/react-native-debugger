@@ -27,8 +27,7 @@
     "humps": "^2.0.1",
     "lodash": "^4.17.5",
     "react-native-device-info": "^0.10.2",
-    "redux-create-reducer": "^1.1.1",
-    "react-native-debugger": "git@github.com:istvanmakary/react-native-debugger.git"
+    "redux-create-reducer": "^1.1.1"
   },
   "peerDepencies": {
     "redux": "^3.6.0",

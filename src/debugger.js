@@ -41,14 +41,6 @@ function DebuggerCreator (store, _config) {
   };
 
   class Debugger {
-    static EVENT_TYPES = {
-      NONE: 'NONE',
-      ERROR: 'ERROR',
-      WARNING: 'WARNING',
-      SUCCESS: 'SUCCESS',
-      ALL: 'ALL',
-    };
-
     static ACTION_TYPES = {};
     static CATEGORY_NAMES = {};
     static EVENT_NAMES = {};
@@ -93,7 +85,6 @@ function DebuggerCreator (store, _config) {
       DebuggerCreator.CATEGORY_NAMES = EventConfig.CATEGORY_NAMES;
       DebuggerCreator.EVENT_NAMES = EventConfig.EVENT_NAMES;
       DebuggerCreator.actionTypeList = values(EventConfig.ACTION_TYPES);
-      DebuggerCreator.eventTypeList = values(EventConfig.EVENT_TYPES);
       DebuggerCreator.getActionTypeName = (actionType) => EventConfig.CATEGORY_NAMES[actionType];
       DebuggerCreator.getActionTypeShortName = (actionType) => EventConfig.EVENT_NAMES[actionType];
 
@@ -150,7 +141,14 @@ function DebuggerCreator (store, _config) {
 
   const _Debugger = new Debugger();
   DebuggerCreator.logAction = _Debugger.logAction.bind(_Debugger);
-  DebuggerCreator.EVENT_TYPES = _Debugger.EVENT_TYPES;
+  DebuggerCreator.EVENT_TYPES = {
+    NONE: 'NONE',
+    ERROR: 'ERROR',
+    WARNING: 'WARNING',
+    SUCCESS: 'SUCCESS',
+    ALL: 'ALL',
+  };
+  DebuggerCreator.eventTypeList = values(DebuggerCreator.EVENT_TYPES);
 };
 
 export default DebuggerCreator;

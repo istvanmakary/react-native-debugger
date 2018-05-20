@@ -41,7 +41,8 @@ createStore(rootReducer, compose(
 
 - isVisible *(Boolean|Required)*  - if true the debugger UI will be visible by default
 - allowServerLogging *(Boolean|Required)* - if true the debugger will send the events to your debugger-server.
-- serverUrl *(String|Required)* - debugger server url (see [debugger-server]())
+- serverUrl *(String|Required)* - debugger server url (see [debugger-server](https://github.com/istvanmakary/react-debugger-server))
+- authorization *(String|Required)* Base auth hash, see details: [How to generate auth hash](https://github.com/istvanmakary/react-debugger-server#hashgeneration)
 - eventTypes *(Array|Required)* - array of [Event Objects](#Events) you want to trigger
 
 **Events**
@@ -62,6 +63,7 @@ createDebugger({
 	isVisible:  true,
 	allowServerLogging:  true,
 	serverUrl:  'http://mydomain.com/log',
+  authorization: 'YWRtaW46U2VjcmV0MTIz', <--- DEFAULT HASH
 	eventTypes: [
 		{
 			TYPE: 'NETWORK_REQUEST',

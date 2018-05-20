@@ -101,6 +101,7 @@ function DebuggerCreator (store, _config) {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
+          Authorization: `Basic ${config.authorization}`
         },
         body: JSON.stringify({
           device,

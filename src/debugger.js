@@ -150,6 +150,7 @@ function DebuggerCreator (store, _config) {
 
   const _Debugger = new Debugger();
   DebuggerCreator.logAction = _Debugger.logAction.bind(_Debugger);
+  DebuggerCreator.EVENT_TYPES = _Debugger.EVENT_TYPES;
 };
 
 export default DebuggerCreator;

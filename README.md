@@ -15,10 +15,10 @@ React Native Debugger requires **React Native 0.35 or later.**
 
 React Native Debugger contains 5 core modules. These modules are responsible to maintain the module correct behaviour. 
 
-- [createDebugger](#createDebugger)
+- [createDebugger](#createdebugger)
 - [debuggerReducer](#debuggerReducer)
-- [Debugger](#Debugger)
-- [DebuggerUI](#DebuggerUI)
+- [Debugger](#debugger)
+- [DebuggerUI](#debuggerui)
 - [actions](#actions)
 
 These are the available named exports of this module.

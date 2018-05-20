@@ -28,6 +28,7 @@ These are the available named exports of this module.
 This module is responsible to set up the debugger and connect it to the Redux architecture.
 
 **Installation**
+
 Add **createDebugger** to your compose function.
 ```
 createStore(rootReducer, compose(
@@ -44,6 +45,7 @@ createStore(rootReducer, compose(
 - eventTypes *(Array|Required)* - array of [Event Objects](#Events) you want to trigger
 
 **Events**
+
 ```
 IMPORTANT:
 The mudule will display only the listed events!
@@ -54,6 +56,7 @@ The mudule will display only the listed events!
 - EVENT_NAME *(String|Required)* - short category  name to be displayed on the Debugger UI.
 
 **Example setup**
+
 ```
 createDebugger({
 	isVisible:  true,
@@ -70,9 +73,11 @@ createDebugger({
 ```
 ---
 #### debuggerReducer
+
 Add **debuggerReducer** to your combineReducers.
 
 **IMPORTANT:**
+
 Name debuggerReducer as **debugger** in your store!
 
 ```
@@ -83,6 +88,7 @@ combineReducers({
 ```
 ---
 #### Debugger
+
 This api is responsible for event triggering. Use this pice of code anywhere in your application to capture React Native Events.
 
 ```

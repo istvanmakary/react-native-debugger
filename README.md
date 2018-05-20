@@ -49,7 +49,7 @@ createStore(rootReducer, compose(
 
 ```
 IMPORTANT:
-The mudule will display only the listed events!
+The module will display only the listed events!
 ```
 
 - TYPE *(String|Required)* - event type (e.g NETWORK_REQUEST)

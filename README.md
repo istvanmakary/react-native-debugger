@@ -63,7 +63,7 @@ createDebugger({
 	isVisible:  true,
 	allowServerLogging:  true,
 	serverUrl:  'http://mydomain.com/log',
-  authorization: 'YWRtaW46U2VjcmV0MTIz', <--- DEFAULT HASH
+  	authorization: 'YWRtaW46U2VjcmV0MTIz', <--- DEFAULT HASH
 	eventTypes: [
 		{
 			TYPE: 'NETWORK_REQUEST',

@@ -9,7 +9,7 @@ React Native Debugger requires **React Native 0.35 or later.**
 
 ### NPM Module
 
-`npm install react-native-debugger`
+`npm install --save react-native-debugger`
 
 ### React Native Device Info
 Device info component must be installed and set up on your project.

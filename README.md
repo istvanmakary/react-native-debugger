@@ -28,6 +28,9 @@ React Native Debugger contains 5 core modules. These modules are responsible to 
 
 These are the available named exports of this module.
 
+**IMPORTANT:**
+This module is not developed for production usage!
+
 ---
 #### createDebugger
 This module is responsible to set up the debugger and connect it to the Redux architecture.
